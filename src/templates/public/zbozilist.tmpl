@@ -1,0 +1,18 @@
+{% from "macros/fields.tmpl" import render_input_field, render_submit %}
+{% extends "shared/layout.tmpl" %}
+
+{% block title %}LIST{% endblock %}
+
+{% block content %}
+  <h3>insert</h3>
+  <div class="form-group"></div>
+ <table>
+    {% for n in data %}
+        <tr><td>{{ n.nazev }}</td>
+        <td><a href="/editzbozi/{{ n.id }}">{{ n.ks }}{{ n.cena }}</a></td>
+        <td><a href="/delzbozi/{{ n.id }}">Smazat</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
